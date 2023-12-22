@@ -34,7 +34,7 @@ body{
 	width: 100%;
 	height: auto;
 	margin:0 auto;
-	float: left;
+	/* float: left; */
 	display: flex;
 	justify-content: center;
   	background-color: white;
@@ -43,7 +43,7 @@ body{
 	width: 100%;
 }
 .container{
-	width: 317px;
+	width: 100%;
 	height: auto;
 	margin: 0 auto;
 	/* display: flex;
@@ -53,7 +53,7 @@ body{
 	width: 20%;
 	margin: 10px 40%;
 	color: black;
-	float: left;
+	/* float: left; */
 	text-align: center;
 	justify-content: center;
 }
@@ -61,7 +61,7 @@ body{
 #line-1, #line-2{
 	width: 100%;
 	height: auto;
-	float: left;
+	/* float: left; */
 	justify-content: center;
 }
 .grey{
@@ -73,7 +73,7 @@ body{
 	margin-bottom: 1px;
 	background-color: white;
 	border-radius: 5px;
-  opacity: 1;
+  	opacity: 1;
 }
 #white{
 	width: 50px;
@@ -91,9 +91,9 @@ body{
 	margin:5px 6px 6px 5px;
 	border-radius: 50%;
 	position:relative;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
-  transform: translateZ(25px);
-  opacity: 1;
+  	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+  	transform: translateZ(25px);
+ 	 opacity: 1;
 	z-index: 1;
 }
 .active-ball{
@@ -104,7 +104,7 @@ body{
 	border-radius: 50%;
 	position:relative;
 	outline: 3px solid rgb(255, 17, 0);
-  outline-offset: 7px;
+  	outline-offset: 7px;
 }
 #grey_square{
 	width: 50px;
@@ -149,7 +149,7 @@ body{
 	height: auto;
 	display: inline-block; */
   width: 70%;
-  float: left;
+  /* float: left; */
   display: block;
   margin: 0 15% 20px 15%;
   padding: 0;
@@ -164,7 +164,7 @@ body{
 	padding: 5px;
 	cursor: pointer;
 	display: inline-block;
-  margin-right: 5px;
+	margin-right: 5px;
 }
 #tableSizeSelect, #ballsQtySelect{
 	width: auto;
@@ -178,24 +178,14 @@ select option{
 	display: inline-block;
 }
 .ballsQty{
-	/* width: 50%;
-	height: auto;
-	display: inline-block; */
   width: 70%;
-  float: left;
   display: block;
   margin: 0 15% 20px 15%;
   padding: 0;
   font-size: 14px;
 }
 .removedBallsQty{
-	/* width:50%;
-	height: auto;
-	float: left;
-	display: block;
-	margin: 15px 25% 0 25%; */
   width: 70%;
-  float: left;
   display: block;
   margin: 0 15% 20px 15%;
   padding: 0;
@@ -214,7 +204,7 @@ select option{
 	padding: 5px;
 	cursor: pointer;
 	display: inline-block;
-  margin-right: 5px;
+  	margin-right: 5px;
 }
 .reset_section{
 	width: 20%;
@@ -232,7 +222,7 @@ select option{
 .startGame{
 	width: 100%;
 	height: auto;
-	float: left;
+	/* float: left; */
 	margin: 20px 0 10px 0;
 }
 .startGame button{
@@ -258,7 +248,7 @@ select option{
 	}
 	.tableSize{
 		width: 100%;
-		float: left;
+		/* float: left; */
 		display: block;
 		margin: 0 0 20px 0;
 		padding: 0;
@@ -266,7 +256,7 @@ select option{
 	}
 	.ballsQty {
 		width: 100%;
-		float: left;
+		/* float: left; */
 		display: block;
 		margin: 0;
 		padding: 0;
@@ -274,7 +264,7 @@ select option{
 	} 
 	.removedBallsQty{
 		width: 100%;
-		float: left;
+		/* float: left; */
 		display: block;
 		margin: 0;
 		padding: 0;
@@ -301,14 +291,14 @@ select option{
 	}
 	.tableSize{
 		width: 100%;
-		float: left;
+		/* float: left; */
 		display: block;
 		margin: 15px 0;
 		padding: 0;
 	}
 	.ballsQty{
 		width: 100%;
-		float: left;
+		/* float: left; */
 		display: block;
 		margin: 0;
 		padding: 0;
