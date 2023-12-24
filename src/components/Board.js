@@ -10,7 +10,7 @@ function Board(props){
     function  handleSelect(event) {
     setSelectedValue(event.target.value);
   }
-  // Create an array with length boardLength*boardLength and use map to render Cell component
+  
   const cells = Array.from({ length: rows ** 2 }, (_, index) => (
     <Cell
       key={index}

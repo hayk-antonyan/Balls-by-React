@@ -44,7 +44,7 @@ function Header(props){
 							</select>
 						</div>
 					</div>
-                <div className="startGame"><button id="myButton">START GAME</button></div>
+                <div className="startGame"><button id="myButton" onClick={props.startGame}>START GAME</button></div>
 			</div>
         </div>
 	);
