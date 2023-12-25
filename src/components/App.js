@@ -1,70 +1,73 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import '../css/App.css';
 import Header from "./Header";
 import Board from "./Board";
 import Score from "./Score";
 
-function App() {  
-
-const [boardLength, setBoardLength] = useState(5);
-const [randomBallsCount, setRandomBallsCount] = useState(3);
-const [totalBallsRemoved, setTotalBallsRemoved] = useState(0);
-const [removedBallsCount, setRemovedBallsCount] = useState(3);
-const [cellWidth, setCellWidth] = useState(53);
-const [gameStarted, setGameStarted] = useState(false);
+function App() {
 
   useEffect(() => {
-    // Update cellWidth based on window.innerWidth
     if (window.innerWidth >= 1366) {
-      setCellWidth(53); // Set a default value for larger screens
+      setCellWidth(53);
     } else if (window.innerWidth >= 768) {
-      setCellWidth(53); // Adjust this value for medium-sized screens
+      setCellWidth(53);
     } else {
-      setCellWidth(53); // Adjust this value for smaller screens
+      setCellWidth(53);
     }
   }, []);
 
+  const [boardLength, setBoardLength] = useState(5);
+  const [randomBallsCount, setRandomBallsCount] = useState(3);
+  const [totalBallsRemoved, setTotalBallsRemoved] = useState(0);
+  const [removedBallsCount, setRemovedBallsCount] = useState(3);
+  const [cellWidth, setCellWidth] = useState(53);
+  const [gameStarted, setGameStarted] = useState(false);
+  const [newBLength, setNewBLength] = useState('');
+  const [newRndmBCount, setewRndmBCount] = useState('');
+  const [newRemovedBalls, setNewRemovedBalls] = useState('');
+
+  const totalWidth = boardLength * cellWidth;
   
+  const handleSize = (event) => {
+    setNewBLength(parseInt(event.target.value, 10));
+  };
+  
+  const handleQty = (event) => {
+    setewRndmBCount(parseInt(event.target.value, 10));
+    alert(setNewRemovedBalls)
+  };
+  
+  const handleRemQty = (event) => {
+    setNewRemovedBalls(parseInt(event.target.value, 10));
+  };
+  
+  const startGame = () => {   
+    setBoardLength(newBLength);
+    setRandomBallsCount(newRndmBCount);
+    setRemovedBallsCount(newRemovedBalls);
+    console.log("Start Game with:", newBLength, newRndmBCount, newRemovedBalls);
+    setGameStarted(true);
+  };
 
-const totalWidth = boardLength * cellWidth;
-
-const handleTableSizeChange = (event) => {
-  setBoardLength(parseInt(event.target.value, 10));
-};
-
-const handleBallsQtyChange = (event) => {
-  setRandomBallsCount(parseInt(event.target.value, 10));
-};
-
-const handleRemovedBallsQtyChange = (event) => {
-  setRemovedBallsCount(parseInt(event.target.value, 10));
-};
-
-const startGame = () => {
-  setGameStarted(true)
-};
-
-const renderBoard = gameStarted && (
-  <Board
-    boardLength={boardLength}
-    totalWidth={totalWidth}
-    randomBallsCount={randomBallsCount}
-    removedBallsCount={removedBallsCount}
-  />
-);
-
-  return <div>
-            <Header
-              handleTableSizeChange={handleTableSizeChange}
-              handleBallsQtyChange={handleBallsQtyChange}
-              handleRemovedBallsQtyChange={handleRemovedBallsQtyChange}
-              startGame={startGame}
-            />
-             <Score 
-              totalBallsRemoved={totalBallsRemoved}
-             />
-             {renderBoard}
-        </div>
+  return (
+    <div>
+      <Header
+        boardLength={boardLength}
+        handleSize={handleSize}
+        handleQty={handleQty}
+        handleRemQty={handleRemQty}
+        startGame={startGame}
+      />
+      <Score totalBallsRemoved={totalBallsRemoved} />
+      <Board
+        key={`${boardLength}-${randomBallsCount}-${removedBallsCount}`}
+        boardLength={boardLength}
+        totalWidth={totalWidth}
+        randomBallsCount={randomBallsCount}
+        removedBallsCount={removedBallsCount}
+      />
+    </div>
+  );
 }
 
 export default App;

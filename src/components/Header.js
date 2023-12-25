@@ -12,7 +12,7 @@ function Header(props){
 					<div className="tableSize">
 						<div className="tableSizeTitle">TABLE SIZE</div>
 						<div className="select">
-							<select id="tableSizeSelect" onChange={props.handleTableSizeChange}>
+							<select id="tableSizeSelect" onChange={props.handleSize}>
 								<option value disabled defaultValue>select</option>
 								<option value="5">5</option>
 								<option value="6">6</option>
@@ -25,7 +25,7 @@ function Header(props){
 					<div className="ballsQty">
 						<div className="tableSizeTitle" >BALLS QUANTITY</div>
 						<div className="select">
-							<select id="ballsQtySelect" onChange={props.handleBallsQtyChange}>
+							<select id="ballsQtySelect" onChange={props.handleQty}>
 								<option value="select" disabled defaultValue>select</option>
 								<option value="3">3</option>
 								<option value="4">4</option>
@@ -36,7 +36,7 @@ function Header(props){
 					<div className="removedBallsQty">
 						<div className="removedTitle">REMOVED BALLS QUANTITY</div>
 						<div className="select">
-							<select id="removedQtySelect" onChange={props.handleRemovedBallsQtyChange}>
+							<select id="removedQtySelect" onChange={props.handleRemQty}>
 								<option value="select" disabled defaultValue>select</option>
 								<option value="3">3</option>
 								<option value="4">4</option>
